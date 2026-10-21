@@ -21,12 +21,20 @@ Open [http://localhost:3000](http://localhost:3000).
 - Update the page title and description in `app/layout.tsx`.
 - Adjust colors, typography, and responsive styling in `app/globals.css`.
 
-## Publish to the internet
+## Deploy to GitHub Pages
 
-The project is ready to deploy to [Vercel](https://vercel.com/), which supports Next.js directly:
+This repository is configured to publish as a static site at
+<https://vaibhav-sawant.github.io/profile/>. A GitHub Actions workflow builds the
+site and deploys it whenever you push to `main`.
 
-1. Push this repository to GitHub.
-2. Import the repository in Vercel and keep the detected Next.js build settings.
-3. Select **Deploy**. Vercel will provide a public URL and can connect a custom domain.
+1. Push the repository to GitHub.
+2. On GitHub, open **Settings → Pages** for the repository.
+3. Under **Build and deployment**, choose **GitHub Actions** as the source.
+4. Push to `main`, or run **Deploy to GitHub Pages** manually from the **Actions** tab.
+5. When the workflow completes, visit <https://vaibhav-sawant.github.io/profile/>.
 
-You can also deploy on another Node.js host by running `npm run build` and then `npm start`.
+The workflow sets `GITHUB_PAGES=true`; this adds the `/profile` base path needed
+for a project site. A normal local `npm run build` exports the site at the domain
+root. The static export is written to `out/`. To preview it locally after building,
+run `python3 -m http.server 8000 --directory out` and open
+<http://localhost:8000>.
