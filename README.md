@@ -9,8 +9,8 @@ before publishing.
 Install dependencies and start the development server:
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
@@ -34,7 +34,7 @@ site and deploys it whenever you push to `main`.
 5. When the workflow completes, visit <https://vaibhav-sawant.github.io/profile/>.
 
 The workflow sets `GITHUB_PAGES=true`; this adds the `/profile` base path needed
-for a project site. A normal local `npm run build` exports the site at the domain
+for a project site. A normal local `pnpm build` exports the site at the domain
 root. The static export is written to `out/`. To preview it locally after building,
 run `python3 -m http.server 8000 --directory out` and open
 <http://localhost:8000>.
